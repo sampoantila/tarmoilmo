@@ -1,11 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import axios from 'axios';
 
 const App: React.FC = () => {
+  const [email, setEmail] = useState('');
 
   const onSubmit = (event: any) => {
-    console.log('Form data: ', event.target);
+    console.log('Form data: ', email);
+    axios.get(`http://localhost:4000/api/v1/authenticate/${email}`);
+  }
+
+  const handleChange = (event: any) => {
+    setEmail(event.target.value);
   }
 
   return (
@@ -14,7 +20,7 @@ const App: React.FC = () => {
         Tarmo-ilmo
       </header>
       <form onSubmit={onSubmit} >
-        <input type="text" name="email" />
+        <input type="text" name="email" onChange={handleChange} value={email} />
         <button type="submit">Login</button>
       </form>
     </div>
