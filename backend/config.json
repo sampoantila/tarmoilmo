@@ -1,0 +1,12 @@
+{
+    "database": {
+        "hostname": "db.host.net",
+        "name": "db",
+        "username": "user",
+        "password": "xxxx"
+    },
+    "common": {
+        "appname": "Tarmo-ilmo-API",
+        "passwordSaltRounds": 10
+    }
+}
