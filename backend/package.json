@@ -1,29 +1,42 @@
 {
-  "name": "backend",
+  "name": "tarmo-ilmo-backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Tarmo ilmo backend",
+  "main": "app.js",
   "scripts": {
-    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "sendgrid.cmd && tsc-watch --onSuccess \"node ./dist/app.js\"",
+    "start": "npm run build && node ./dist/app.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "DataCodex"
+  },
+  "license": "MIT",
   "dependencies": {
-    "@types/compression": "^1.0.1",
+    "@sendgrid/client": "^6.5.1",
+    "@sendgrid/mail": "^6.5.1",
     "@types/cors": "^2.8.6",
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.2",
     "@types/node": "^12.12.21",
-    "@types/request-promise": "^4.1.45",
-    "compression": "^1.7.4",
+    "@types/request": "^2.48.4",
+    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "request": "^2.88.0",
-    "request-promise": "^4.2.5",
+    "morgan": "^1.9.1",
     "tsc-watch": "^4.0.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "uuid": "^3.4.0"
+  },
+  "devDependencies": {
+    "@types/morgan": "^1.7.37",
+    "@types/uuid": "^3.4.6",
+    "@typescript-eslint/eslint-plugin": "^2.17.0",
+    "@typescript-eslint/parser": "^2.17.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }
