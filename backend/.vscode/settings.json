@@ -1,4 +1,0 @@
-{
-    "appService.defaultWebAppToDeploy": "/subscriptions/aa29723f-c279-438f-9d07-b92c24c7c95b/resourceGroups/tarmoapi-rg/providers/Microsoft.Web/sites/tarmoapi",
-    "appService.deploySubpath": ""
-}
