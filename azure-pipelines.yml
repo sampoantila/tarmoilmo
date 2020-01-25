@@ -40,7 +40,7 @@ stages:
         npm run build --if-present
         npm run test --if-present
       displayName: 'npm install, build and test'
-      workingDirectory: '/backend/dist'
+      workingDirectory: 'backend/dist'
       
     - task: ArchiveFiles@2
       displayName: 'Archive files'
