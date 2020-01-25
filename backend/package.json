@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "sendgrid.cmd && tsc-watch --onSuccess \"node ./dist/app.js\"",
-    "start": "npm run build && node ./dist/app.js"
+    "start": "npm run build && node ./dist/app.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": {
