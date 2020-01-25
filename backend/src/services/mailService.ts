@@ -1,12 +1,11 @@
 import sendgrid from '@sendgrid/mail';
-import { MailData } from "@sendgrid/helpers/classes/mail";
 
 class MailService {
     async sendAuthenticationMail(email: string, token: string): Promise<void> {
 
         const loginUrl = `http://localhost:4000/authenticate/validate/${token}`;
 
-        const msg: MailData = {
+        const msg = {
             to: email,
             from: process.env.SENDGRID_SENDER || '',
             templateId: process.env.SENDGRID_TEMPLATE_ID,
@@ -20,9 +19,8 @@ class MailService {
         {
             sendgrid.setApiKey(apiKey);
 
-            const response = await sendgrid.send(msg);
+            await sendgrid.send(msg);
             console.log('message sent to ' + email);
-            console.log(response);
         }
         else {
             console.warn('sendgrid api key missing, not sending email');
