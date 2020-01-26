@@ -1,21 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 //import logo from './logo.svg';
 import './App.css';
-import { Box, Typography, Link, SvgIcon, makeStyles, Button } from '@material-ui/core';
+import { Box, Typography, Link, SvgIcon, makeStyles, Button, TextField } from '@material-ui/core';
 import Container from '@material-ui/core/Container';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
 
 function LightBulbIcon(props: any) {
   return (
@@ -40,21 +27,39 @@ function ProTip() {
   return (
     <Typography className={classes.root} color="textSecondary">
       <LightBulbIcon className={classes.lightBulb} />
-      Pro tip: See more{' '}
-      <Link href="https://material-ui.com/getting-started/templates/">templates</Link> on the
-      Material-UI documentation.
+      Pro tip: Lisätietoja <Link href="https://www.juhannuskonferenssi.fi/talkoisiin/">talkoo sivulta</Link>.
     </Typography>
   );
 }
 
+const Footer: FC = () => {
+  return (
+    <footer>
+      <Typography variant="body2" align="center" style={{ marginTop: 10 }}>
+        &copy;
+        {' '}
+        <Link color="inherit" href="https://datacodex.fi/">
+          DataCodex
+        </Link>
+        {' '}
+        {new Date().getFullYear()}
+      </Typography>
+    </footer>
+  );
+}
 
-const App: React.FC = () => {
+
+const App: FC = () => {
+  const classes = useStyles();
   return (
     <Container maxWidth="sm">
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Create React App v4-beta example
+          Tarmo ilmo
       </Typography>
+        <form className={classes.root} noValidate autoComplete="off">
+          <TextField id="standard-basic" label="Sähköpostiosoite" />
+        </form>
         <Button variant="contained" color="primary">
           Hello World
         </Button>
@@ -63,8 +68,8 @@ const App: React.FC = () => {
           Hello Web
         </Button>
         <ProTip />
-        <Copyright />
       </Box>
+      <Footer />
     </Container>
     // <div className="App">
     //   <header className="App-header">
