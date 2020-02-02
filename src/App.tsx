@@ -27,7 +27,7 @@ function ProTip() {
   return (
     <Typography className={classes.root} color="textSecondary">
       <LightBulbIcon className={classes.lightBulb} />
-      Pro tip: Lisätietoja <Link href="https://www.juhannuskonferenssi.fi/talkoisiin/">talkoo sivulta</Link>.
+      Lisätietoja <Link href="https://www.juhannuskonferenssi.fi/talkoisiin/">talkoo sivulta</Link>.
     </Typography>
   );
 }
@@ -51,11 +51,16 @@ const Footer: FC = () => {
 
 const App: FC = () => {
   const classes = useStyles();
+  const api = process.env.REACT_APP_TARMO_ILMO_API;
+
+  console.log('api: ');
+  console.log(api);
+
   return (
     <Container maxWidth="sm">
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Tarmo ilmo
+          Talkoo ilmoittautuminen
       </Typography>
         <form className={classes.root} noValidate autoComplete="off">
           <TextField id="standard-basic" label="Sähköpostiosoite" />
